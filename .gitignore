@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea
+mini-spring.iml
+tomcat.6699
+framework/framework.iml
+framework/target
+test/target
+test/test.iml
+.gitignore
