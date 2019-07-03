@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * @description:
+ * @description: 映射处理类
  * @author: Chen
  * @create: 2019-07-03 00:35
  **/
@@ -31,6 +31,16 @@ public class MappingHandle {
         this.agrs = agrs;
     }
 
+    /**
+     * 将扫描到到RequestMapping的路径  进行处理
+     * 通过反射调用 调用该方法
+     * @param req
+     * @param res
+     * @return
+     * @throws InvocationTargetException
+     * @throws IllegalAccessException
+     * @throws IOException
+     */
     public boolean handle(ServletRequest req, ServletResponse res) throws InvocationTargetException, IllegalAccessException, IOException {
 
         String requestURI = ((HttpServletRequest)req).getRequestURI();

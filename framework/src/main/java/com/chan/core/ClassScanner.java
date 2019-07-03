@@ -12,7 +12,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- * @description:
+ * @description:类扫描器
  * @author: Chen
  * @create: 2019-07-02 22:29
  **/
@@ -27,13 +27,14 @@ public class ClassScanner {
         while (resources.hasMoreElements()){
 
             URL resource = resources.nextElement();
-
+            //如果资源是jar包，那么遍历jar里面到文件
             if (resource.getProtocol().contains("jar")){
                 JarURLConnection jarURLConnection = (JarURLConnection) resource.openConnection();
                 String jarFilePath = jarURLConnection.getJarFile().getName();
                 classList.addAll(getClassesFromJar(path,jarFilePath));
-            }else if (resource.getProtocol().contains("file")){
-
+            }
+            //是文件的话，递归取的文件
+            else if (resource.getProtocol().contains("file")){
                 File dir = new File(resource.getFile());
                 for (File file:dir.listFiles()){
                     if (file.isDirectory()){
@@ -47,9 +48,6 @@ public class ClassScanner {
             }
 
         }
-
-
-
         return classList;
 
     }
@@ -61,7 +59,8 @@ public class ClassScanner {
         Enumeration<JarEntry> jarEntrys = jarFile.entries();
         while (jarEntrys.hasMoreElements()){
             JarEntry jarEntry = jarEntrys.nextElement();
-            String name = jarEntry.getName();//com/mooc/zbs/test/Test.class
+            //com/mooc/zbs/test/Test.class
+            String name = jarEntry.getName();
             if (name.startsWith(path)&&name.endsWith(".class")){
                 String classFullName = name.replace("/", ".").substring(0, name.length() - 6);
                 classList.add(Class.forName(classFullName));

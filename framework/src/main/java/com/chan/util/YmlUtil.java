@@ -1,7 +1,6 @@
 package com.chan.util;
 
 import java.io.FileInputStream;
-import java.lang.management.OperatingSystemMXBean;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,7 +9,7 @@ import java.util.Map;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * @author zsljava 2017年12月13日 下午2:16:49
+ * 对yml文件进行读取 工具类
  * @since 1.0.0
  */
 public class YmlUtil {

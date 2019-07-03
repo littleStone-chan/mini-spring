@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * @description:
+ * @description: serlet适配器，所有的url都会进入到此处，
+ * 在此处根据@RequestMaping所映射到方法进行操作。
  * @author: Chen
  * @create: 2019-06-23 15:15
  **/
@@ -35,7 +36,6 @@ public class DispatcherServlet implements Servlet {
                 }else {
                     System.out.println("false");
                 }
-
             } catch (InvocationTargetException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

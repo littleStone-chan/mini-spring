@@ -10,7 +10,7 @@ import org.apache.catalina.startup.Tomcat;
 import javax.servlet.Servlet;
 
 /**
- * @description:
+ * @description:根据 tomcat 的包进行处理
  * @author: Chen
  * @create: 2019-06-23 14:58
  **/

@@ -17,7 +17,6 @@ import java.util.List;
 public class MiniApplication {
 
     public static void run(Class<?> clz,String[] agrs){
-        System.out.println("Hello mini-spring!");
         TomcatServer tomcatServer = new TomcatServer(agrs);
         try {
             List<Class<?>> classList = ClassScanner.scanClasses(clz.getPackage().getName());
