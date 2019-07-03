@@ -1,5 +1,6 @@
 package com.chan.web.server;
 
+import com.chan.util.YmlUtil;
 import com.chan.web.servlet.DispatcherServlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -24,7 +25,7 @@ public class TomcatServer {
 
     public void startServer() throws LifecycleException {
         tomcat = new Tomcat();
-        tomcat.setPort(6699);
+        tomcat.setPort(YmlUtil.get("server.port"));
         tomcat.start();
 
         Context context = new StandardContext();
