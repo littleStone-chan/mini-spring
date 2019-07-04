@@ -11,12 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 映射处理管理中心
  * @author: Chen
  * @create: 2019-07-03 00:34
  **/
 public class HandlerManage {
 
+    /**
+     * 保存需要映射的列表
+     */
     public static List<MappingHandle> mappingHandleList = new ArrayList<>();
 
     public static void resolveMappingHandleList(List<Class<?>> classList){

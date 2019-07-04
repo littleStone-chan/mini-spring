@@ -1,12 +1,10 @@
 package com.chan.controller;
 
-import com.chan.Service.UserBean;
+import com.chan.service.UserBean;
 import com.chan.beans.AutoWired;
 import com.chan.web.mvc.Controller;
 import com.chan.web.mvc.RequestMapping;
 import com.chan.web.mvc.RequestParam;
-
-import java.util.Base64;
 
 /**
  * @description:

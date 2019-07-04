@@ -17,7 +17,7 @@
             <artifactId>tomcat-embed-core</artifactId>
             <version>8.5.34</version>
         </dependency>
-
+        <!-- 对yml文件进行操作 -->
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>

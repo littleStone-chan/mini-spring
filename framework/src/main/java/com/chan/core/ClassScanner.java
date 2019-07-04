@@ -18,6 +18,14 @@ import java.util.jar.JarFile;
  **/
 public class ClassScanner {
 
+    /**
+     * 扫描包下的文件并返回。
+     * 如果是jar包，则取jar的文件。如果是文件夹，这递归取
+     * @param packegeName
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static List<Class<?>> scanClasses(String packegeName) throws IOException, ClassNotFoundException {
 
         List<Class<?>> classList = new ArrayList<>();
@@ -59,7 +67,6 @@ public class ClassScanner {
         Enumeration<JarEntry> jarEntrys = jarFile.entries();
         while (jarEntrys.hasMoreElements()){
             JarEntry jarEntry = jarEntrys.nextElement();
-            //com/mooc/zbs/test/Test.class
             String name = jarEntry.getName();
             if (name.startsWith(path)&&name.endsWith(".class")){
                 String classFullName = name.replace("/", ".").substring(0, name.length() - 6);

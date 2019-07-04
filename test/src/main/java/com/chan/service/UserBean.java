@@ -1,4 +1,4 @@
-package com.chan.Service;
+package com.chan.service;
 
 import com.chan.beans.Bean;
 
